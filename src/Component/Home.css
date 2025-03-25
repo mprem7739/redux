@@ -1,0 +1,98 @@
+/* Body and Container */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--text-color, #333);
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Grid for Courses */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Individual Course Box */
+.course-box {
+    background-color: var(--primary-color, #007bff);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.course-box:hover {
+    background-color: var(--hover-color, #0056b3);
+    transform: translateY(-10px);
+}
+
+.course-box.hovered {
+    background-color: var(--highlight-color, #0056b3);
+    transform: translateY(-12px);
+}
+
+/* Course Image */
+.course-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Course Name */
+.course-name {
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.course-box:hover .course-name {
+    color: #ffdd57;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .home-container {
+        padding: 20px;
+    }
+
+    .course-grid {
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+/* Adding Dynamic Colors with CSS Variables */
+:root {
+    --primary-color: #007bff;
+    --hover-color: #0056b3;
+    --highlight-color: #ff6f61;
+    --text-color: #333;
+}
